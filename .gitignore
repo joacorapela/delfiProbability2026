@@ -1,0 +1,6 @@
+*~
+*.bak
+doc/solucionJoaquin/solucionJoaquin.*
+!doc/solucionJoaquin/solucionJoaquin.tex
+!doc/solucionJoaquin/solucionJoaquin.pdf
+.nfs*
