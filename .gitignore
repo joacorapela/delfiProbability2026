@@ -1,6 +1,6 @@
 *~
 *.bak
-doc/solucionJoaquin/solucionJoaquin.*
-!doc/solucionJoaquin/solucionJoaquin.tex
-!doc/solucionJoaquin/solucionJoaquin.pdf
+docs/solucionJoaquin/solucionJoaquin.*
+!docs/solucionJoaquin/solucionJoaquin.tex
+!docs/solucionJoaquin/solucionJoaquin.pdf
 .nfs*
