@@ -240,7 +240,7 @@ de la llegada de previos y siguientes alumnos son sus respectivos sandwiches.
 \pagebreak
 \section*{Ejercicio 5}
 
-Asumo que los precio de las remodelaciones son independientes e idénticamente
+Asumo que los precios de las remodelaciones son independientes e idénticamente
 distribuidos, con distribución normal con media 240 desvío estándar $\sigma$.
 Es decir que para la i-esima remodelación, $R_i$, tenemos:
 
@@ -249,11 +249,11 @@ Es decir que para la i-esima remodelación, $R_i$, tenemos:
 \end{align*}
 
 Entonces, la distribución del promedio de 36 reformas va a ser una variable
-aleatoria normal con media 240 y desvío estándar $\sigma/36$.
+aleatoria normal con media 240 y desvío estándar $\sigma/6$.
 Es decir que para el promedio de 36 remodelaciones, $\bar{R}$, tenemos
 
 \begin{align*}
-    \bar{R}\sim\mathcal{N}(\mu=240, (\sigma/36)^2)
+    \bar{R}\sim\mathcal{N}(\mu=240, \sigma^2/36)
 \end{align*}
 
 Me interesa encontrar el valor de $\sigma$ para que:
@@ -265,23 +265,23 @@ Me interesa encontrar el valor de $\sigma$ para que:
 o, lo que es lo mismo:
 
 \begin{align*}
-    P\left(\left|\frac{\bar{R}-240}{\sigma/36}\right|<\frac{0.5}{\sigma/36}\right)=0.95
+    P\left(\left|\frac{\bar{R}-240}{\sigma/6}\right|<\frac{0.5}{\sigma/6}\right)=0.95
 \end{align*}
 
-Pero sabemos que $Z=\frac{\bar{R}-240}{\sigma/36}$ es una variable aleatoria normal
-estándar, por lo que $\frac{0.5}{\sigma/36}$ debe ser el valor $z$ que deja
+Pero sabemos que $Z=\frac{\bar{R}-240}{\sigma/6}$ es una variable aleatoria normal
+estándar, por lo que $\frac{0.5}{\sigma/6}$ debe ser el valor $z$ que deja
 un total de 0.025 de probabilidad a la derecha. Es decir que
-$\frac{0.5}{\sigma/36}$ debe ser el 97.5 percentil de la distribución normal
+$\frac{0.5}{\sigma/6}$ debe ser el 97.5 percentil de la distribución normal
 estándar, cuyo valor es $z_{0.975}=1.96$.
 
 \begin{align*}
-    \frac{0.5}{\sigma/36}=z_{0.975}=1.96
+    \frac{0.5}{\sigma/6}=z_{0.975}=1.96
 \end{align*}
 
 Entonces
 
 \begin{align*}
-    \sigma=\frac{0.5\times 36}{1.96}=\frac{18}{1.96}=9.18
+    \sigma=\frac{0.5\times 6}{1.96}=\frac{3}{1.96}=1.53
 \end{align*}
 
 \pagebreak
