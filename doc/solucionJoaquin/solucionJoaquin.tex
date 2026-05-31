@@ -174,12 +174,13 @@ para lo cual necesito obtener:
 Definamos $Z=I^2$. Queremos calcular $E(Z)$ y $E(Z^2)$, para lo cual vamos a
 obtener la función de densidad de probabilidad de $Z$.
 
-\begin{align*}
-    F_Z(z)&=P(Z<z)=P(I^2<z)=P(I<\sqrt{z})=\frac{\sqrt{z}}{4},\quad\text{if}\;6\le\sqrt{z}\le 10\;\text{or}\;36\le z\le 100\\
-    f_Z(z)&=\frac{\partial}{\partial z}F_Z(z)=\frac{1}{8}z^{-1/2}\\
-    E(Z)&=\int_{36}^{100}zf_Z(z)dz=\int_{36}^{100}z\frac{1}{8}z^{-1/2}dz=\frac{1}{8}\int_{36}^{100}z^{1/2}dz=\frac{1}{8}\frac{2}{3}\left.z^{3/2}\right|_{36}^{100}=\frac{1}{12}(10^3-216)=\frac{784}{12}\\
-    E(Z^2)&=\int_{36}^{100}z^2f_Z(z)dz=\int_{36}^{100}z^2\frac{1}{8}z^{-1/2}dz=\frac{1}{8}\int_{36}^{100}z^{3/2}dz=\frac{1}{8}\frac{2}{5}\left.z^{5/2}\right|_{36}^{100}=\frac{1}{20}(10^5-6^5)=\frac{1}{20}92224
-\end{align*}
+\begin{align}
+    F_Z(z)&=P(Z<z)=P(I^2<z)=P(I<\sqrt{z})=\frac{\sqrt{z}}{4},\quad\text{if}\;6\le\sqrt{z}\le
+    10\;\text{or}\;36\le z\le 100\nonumber\\
+    f_Z(z)&=\frac{\partial}{\partial z}F_Z(z)=\frac{1}{8}z^{-1/2}\nonumber\\
+    E(Z)&=\int_{36}^{100}zf_Z(z)dz=\int_{36}^{100}z\frac{1}{8}z^{-1/2}dz=\frac{1}{8}\int_{36}^{100}z^{1/2}dz=\frac{1}{8}\frac{2}{3}\left.z^{3/2}\right|_{36}^{100}=\frac{1}{12}(10^3-216)=\frac{784}{12}\label{eq:EZ}\\
+    E(Z^2)&=\int_{36}^{100}z^2f_Z(z)dz=\int_{36}^{100}z^2\frac{1}{8}z^{-1/2}dz=\frac{1}{8}\int_{36}^{100}z^{3/2}dz=\frac{1}{8}\frac{2}{5}\left.z^{5/2}\right|_{36}^{100}=\frac{1}{20}(10^5-6^5)=\frac{1}{20}92224\label{eq:EZ2}
+\end{align}
 
 Entonces
 
@@ -277,4 +278,15 @@ Entonces
     \sigma=\frac{0.5\times 36}{1.96}=\frac{18}{1.96}=9.18
 \end{align*}
 
+\pagebreak
+\section*{Apendice al ejercicio 3}
+
+Delfina se ahorró el cálculo de $f_Z(z)$ para obtener $E(Z)$. Calculo $E(Z)$
+como sigue:
+
+\begin{align*}
+    E(Z)=E(I^2)=\int_6^{10}i^2f_Y(y)dy=\frac{1}{4}\int_6^{10}i^2dy=\frac{1}{4}\left.\frac{i^3}{3}\right|=\frac{1}{4}\left(\frac{1000}{3}-\frac{216}{3}\right)=\frac{784}{12}
+\end{align*}
+
+obteniendo el mismo resultado para la Eq.~\ref{eq:EZ}.
 \end{document}
