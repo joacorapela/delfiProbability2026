@@ -2,11 +2,17 @@
 \documentclass[10pt]{article}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage[margin=0.75in]{geometry}
 \setlength{\parindent}{0pt}
 \usepackage{pgfplots}
+\usepackage{mdframed}
 \pgfplotsset{compat=1.18}
 \usepackage[colorlinks]{hyperref}
+
+\newtheorem{lema}{Lema}
+\newmdtheoremenv{teorema}{Teorema}
 
 \begin{document}
 
@@ -125,13 +131,13 @@ Puedo hacer esto gráficamente, dividiendo el área de la región gris en la Fig
 \end{axis}
 \end{tikzpicture}
 
-\caption{Necesito integrar la densidad sobre el área gris para calcular el numerador en Eq.~\ref{eq:targetProbEx2} e integrar la densidad debajo de la linea $J=5-A$, entre las lineas verticales y sobre la linea horizontal $J=1$, para calcular el denominador en la misma ecuación.}
+\caption{Necesito integrar la densidad sobre el área gris para calcular el numerador en Ec.~\ref{eq:targetProbEx2} e integrar la densidad debajo de la linea $J=5-A$, entre las lineas verticales y sobre la linea horizontal $J=1$, para calcular el denominador en la misma ecuación.}
 
 \label{fig:ex2}
 
 \end{figure}
 
-También puedo calcular la probabilidad en Eq.~\ref{eq:targetProbEx2} analíticamente. Primero determino el punto en el eje $A$ en donde la diagonal $J=A$ se intersecta con la linea $J=5-A$. Si $J=A$ y $J=5-A$, entonces $A=2.5$.
+También puedo calcular la probabilidad en Ec.~\ref{eq:targetProbEx2} analíticamente. Primero determino el punto en el eje $A$ en donde la diagonal $J=A$ se intersecta con la linea $J=5-A$. Si $J=A$ y $J=5-A$, entonces $A=2.5$.
 
 \begin{align*}
 	P(A<J\;\cap\;A+J<5)&=\int_2^{2.5}\int_1^af(a,j)\;djda+\int_{2.5}^4\int_1^{5-a}f(a,j)\;djda=\frac{1}{4}\left(\int_2^{2.5}\int_1^a\;djda+\int_{2.5}^4\int_1^{5-a}\;djda\right)\\
@@ -200,7 +206,7 @@ Para verificar este calculo, simule 1000 muestras de W, calcule la
 varianza de la muestra, y repetí este cálculo 1000 veces. De este modo obtuve 1000
 valores de la varianza muestral. Cada valor de la varianza muestral es
 diferente, pues las muestras son aleatorias. Si el valor de la varianza de $W$
-obtenido analíticamente en Eq.~\ref{eq:answerEx3} es correcto, este valor
+obtenido analíticamente en Ec.~\ref{eq:answerEx3} es correcto, este valor
 debería ser cercano a la media de las varianzas muestrales. Como muestra la
 Figura~\ref{fig:ex3}, el valor de la media varianza muestral (linear vertical
 discontinua) es cercano al valor de la varianza analítica (linea vertical
@@ -212,7 +218,7 @@ solida). El código Python que use para generar esta figura esta
     \includegraphics[width=6in]{../..//figures/fig_ex3.png}
     \caption{Histograma de varianzas muestrales. La media de las varianzas
     muestrales (linea vertical discontinua) es cercana a la varianza obtenida
-    analíticamente en Eq.~\ref{eq:answerEx3} (linea vertical continua), lo que
+    analíticamente en Ec.~\ref{eq:answerEx3} (linea vertical continua), lo que
     sugiere que la varianza analítica es correcta.}
     \label{fig:ex3}
 \end{figure}
@@ -221,10 +227,10 @@ solida). El código Python que use para generar esta figura esta
 \section*{Ejercicio 4}
 
 Parafraseo la pregunta como ``Hallar la probabilidad de que el primer y el
-tercer alumno lleguen con sandwiches de salchica de burro dado que el segundo
-alumno llego con un sandwich vegetariano.''
+tercer alumno lleguen con sandwiches de salchicha de burro dado que el segundo
+alumno llego con un sándwich vegetariano.''
 
-Asumo que la llegada de un alumno con su respectivo sandwich es independiente
+Asumo que la llegada de un alumno con su respectivo sándwich es independiente
 de la llegada de previos y siguientes alumnos son sus respectivos sandwiches.
 
 \begin{align*}
@@ -234,8 +240,8 @@ de la llegada de previos y siguientes alumnos son sus respectivos sandwiches.
 \pagebreak
 \section*{Ejercicio 5}
 
-Asumo que los precio de las remodelaciones son independientes e identicamente
-distribuidos, con distribución normal con media 240 desvío standard $\sigma$.
+Asumo que los precio de las remodelaciones son independientes e idénticamente
+distribuidos, con distribución normal con media 240 desvío estándar $\sigma$.
 Es decir que para la i-esima remodelación, $R_i$, tenemos:
 
 \begin{align*}
@@ -243,14 +249,14 @@ Es decir que para la i-esima remodelación, $R_i$, tenemos:
 \end{align*}
 
 Entonces, la distribución del promedio de 36 reformas va a ser una variable
-aleatoria normal con media 240 y desvío standard $\sigma/36$.
+aleatoria normal con media 240 y desvío estándar $\sigma/36$.
 Es decir que para el promedio de 36 remodelaciones, $\bar{R}$, tenemos
 
 \begin{align*}
     \bar{R}\sim\mathcal{N}(\mu=240, (\sigma/36)^2)
 \end{align*}
 
-Me interesa econtrar el valor de $\sigma$ para que:
+Me interesa encontrar el valor de $\sigma$ para que:
 
 \begin{align*}
     P(|\bar{R}-240|<0.5)=0.95
@@ -263,10 +269,10 @@ o, lo que es lo mismo:
 \end{align*}
 
 Pero sabemos que $Z=\frac{\bar{R}-240}{\sigma/36}$ es una variable aleatoria normal
-standardad, por lo que $\frac{0.5}{\sigma/36}$ debe ser el valor $z$ que deja
+estándar, por lo que $\frac{0.5}{\sigma/36}$ debe ser el valor $z$ que deja
 un total de 0.025 de probabilidad a la derecha. Es decir que
-$\frac{0.5}{\sigma/36}$ debe ser el 97.5 percentil de la distribucion normal
-standard, cuyo valor es $z_{0.975}=1.96$.
+$\frac{0.5}{\sigma/36}$ debe ser el 97.5 percentil de la distribución normal
+estándar, cuyo valor es $z_{0.975}=1.96$.
 
 \begin{align*}
     \frac{0.5}{\sigma/36}=z_{0.975}=1.96
@@ -279,14 +285,98 @@ Entonces
 \end{align*}
 
 \pagebreak
-\section*{Apendice al ejercicio 3}
+\section*{Apéndice al ejercicio 3}
 
-Delfina se ahorró el cálculo de $f_Z(z)$ para obtener $E(Z)$. Calculo $E(Z)$
+Delfi se ahorró el cálculo de $f_Z(z)$ para obtener $E(Z)$. Calculo $E(Z)$
 como sigue:
 
 \begin{align*}
-    E(Z)=E(I^2)=\int_6^{10}i^2f_Y(y)dy=\frac{1}{4}\int_6^{10}i^2dy=\frac{1}{4}\left.\frac{i^3}{3}\right|=\frac{1}{4}\left(\frac{1000}{3}-\frac{216}{3}\right)=\frac{784}{12}
+    E(Z)=E(I^2)=\int_6^{10}i^2f_Y(y)dy=\frac{1}{4}\int_6^{10}i^2dy=\frac{1}{4}\left.\frac{i^3}{3}\right|_{i=6}^{10}=\frac{1}{12}\left(10^3-6^3\right)=\frac{784}{12}
 \end{align*}
 
-obteniendo el mismo resultado para la Eq.~\ref{eq:EZ}.
+obteniendo el mismo resultado que en la Ec.~\ref{eq:EZ}.
+%
+También se ahorró el cálculo de $f_Z(z)$ para obtener $E(Z^2)$:
+
+\begin{align*}
+    E(Z^2)=E(I^4)=\int_6^{10}i^4f_Y(y)dy=\frac{1}{4}\int_6^{10}i^4dy=\frac{1}{4}\left.\frac{i^5}{5}\right|_{i=6}^{10}=\frac{1}{20}\left(10^5-6^5\right)
+\end{align*}
+
+obteniendo el mismo resultado que en la Ec.~\ref{eq:EZ2}.
+
+¿Porque funciona le método de Delfi? El siguiente lema lo demuestra.
+\textbf{Este lema es muy importante, pues prueba que para calcular el valor
+esperado de una función de una variable aleatoria no hace falta calcular la
+función de densidad de probabilidad de la variable aleatoria transformada.}
+
+\begin{lema}
+
+    Si $X$ es una variable aleatoria en $\mathbb{R}$, con función de densidad
+    de probabilidad $f_X(x)$, con soporte en $[a, b]$, y $g:[a,
+    b]\rightarrow I$ es una función monotónica no decreciente (i.e.,
+    $y_1\le y_2$ implica que $g(y_1)\le g(y_2)$), donde $I\in\mathbb{R}$ es un
+    intervalo, entonces
+
+\begin{align*}
+    E(g(X))=\int_a^bg(x)f_X(x)dx
+\end{align*}
+
+\end{lema}
+
+\begin{proof}
+
+    Definimos la variable aleatoria $Y=g(X)$. Como $X\in[a,b]$, y porque $g$ es
+    monótona no decreciente, se cumple que $Y=g(X)\in[g(a),g(b)]$.
+
+    Quiero calcular $E(g(X))=E(Y)$
+    para lo cual voy a derivar la función de densidad de probabilidad de $Y$,
+    $f_Y(y)$. Empiezo calculando la función de distribución acumulada,
+    $F_Y(y)$.
+
+    \begin{align*}
+        F_Y(y)=P(Y<y)=P(g(X)<y)=P(X<g^{-1}(y))=F_X(g^{-1}(y))
+    \end{align*}
+
+    done $g^{-1}$ existe, pues $g$ es monotónica, y obtengo $f_Y(y)$ derivando
+    $F_Y(y)$.
+
+    \begin{align}
+        f_Y(y)=F'_Y(y)=F'_X(g^{-1}(y))\;(g^{-1})'(y)=f_X(g^{-1}(y))\;(g^{-1})'(y)=\frac{f_X(g^{-1}(y))}{g'(g^{-1}(y))}\label{eq:f_Y}
+    \end{align}
+
+    En la segunda igualdad de la Ec.~\ref{eq:f_Y} usamos la regla de la cadena
+    de la derivada, y en la última igualdad usamos el resultado
+    $(g^{-1})'(y)=1/g'(g^{-1}(y))$\footnote{$g\left(g^{-1}(y)\right)=y$,
+    derivando ambos lados de la igualdad, usando la regla de la cadena de la
+    derivada, $g'\left(g^{-1}(y)\right)\;(g^{-1})'(y)=1$, por lo que sigue que
+    $(g^{-1})'(y)=1/g'\left(g^{-1}(y)\right)$}.  Entonces
+
+    \begin{align*}
+        E(g(X))=E(Y)=\int_{g(a)}^{g(b)}yf_Y(y)dy=\int_{g(a)}^{g(b)}y\frac{f_X(g^{-1}(y))}{g'(g^{-1}(y))}dy\label{eq:EgX}
+    \end{align*}
+
+    Ahora vamos a utilizar el
+    \href{https://es.wikipedia.org/wiki/Sustituci%C3%B3n_en_integraci%C3%B3n#Integrales_definidas}{teorema
+    del cambio de variables} que dice:
+
+    \begin{teorema}[Cambio de variables]
+
+        Dada una función $\varphi:[a,b]\rightarrow I$ continuamente
+        diferenciable, donde $I\in\mathbb{R}$ es un intervalo, y una función
+        continua $f: I\rightarrow\mathbb{R}$, entonces
+
+        \begin{align*}
+            \int_a^bf(\varphi(x))\varphi'(x)dx=\int_{\varphi(a)}^{\varphi(b)}f(u)du
+        \end{align*}
+    \end{teorema}
+
+    Aplicando este teorema con $\varphi(x)=g(x)$ y
+    $f(y)=y\frac{f_X(g^{-1}(y))}{g'(g^{-1}(y))}$ obtenemos lo que queríamos
+    probar.
+
+    \begin{align*}
+        E(g(X))=\int_{g(a)}^{g(b)}y\frac{f_X(g^{-1}(y))}{g'(g^{-1}(y))}dy=\int_a^bg(x)\frac{f_X(g^{-1}(g(x))))}{g'(g^{-1}(g(x)))}g'(x)dx=\int_a^bg(x)\frac{f_X(x)}{g'(x)}g'(x)dx=\int_a^bg(x)f_X(x)dx
+    \end{align*}
+
+\end{proof}
 \end{document}
