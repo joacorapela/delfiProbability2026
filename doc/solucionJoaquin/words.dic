@@ -1,5 +1,6 @@
-personal_ws-1.1 es 50 
-Eq
+personal_ws-1.1 es 61 
+Delfi
+Ec
 Python
 RI
 Tatoh
@@ -9,6 +10,8 @@ above
 abs
 af
 at
+bf
+bg
 black
 blue
 both
@@ -16,11 +19,16 @@ compat
 cs
 cycle
 dashed
+diferenciable
 djda
 domain
 dr
+du
+dx
+dy
 dz
 enlargelimits
+esima
 font
 gray
 grid
@@ -32,10 +40,12 @@ line
 muestral
 muestrales
 or
+percentil
 pt
 rf
 ri
 right
+sandwiches
 style
 teal
 thick
@@ -44,6 +54,7 @@ width
 xmax
 xmin
 xtick
+yf
 ylabel
 ymax
 ymin
