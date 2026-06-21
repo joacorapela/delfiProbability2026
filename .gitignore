@@ -1,9 +1,10 @@
 *~
 *.bak
-docs/solucionJoaquin/solucionJoaquin.*
-!docs/solucionJoaquin/solucionJoaquin.tex
-!docs/solucionJoaquin/solucionJoaquin.pdf
+.nfs*
+*.swp
+docs/parcial1/solucionJoaquin.*
+!docs/parcial1/solucionJoaquin.tex
+!docs/parcial1/solucionJoaquin.pdf
 docs/trabajoPracticoICD/tpICD_joaquin.*
 !docs/trabajoPracticoICD/tpICD_joaquin.tex
 !docs/trabajoPracticoICD/tpICD_joaquin.pdf
-.nfs*
