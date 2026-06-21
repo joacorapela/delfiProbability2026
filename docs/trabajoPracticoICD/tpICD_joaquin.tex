@@ -1,0 +1,105 @@
+
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage[colorlinks]{hyperref}
+
+\begin{document}
+
+\section*{Problema 1a}
+
+La Figura~\ref{fig:1a} grafica las estimaciones de la probabilidad del evento B
+condicionado en el evento A, $P(B|A)$,
+usando distintos números de repeticiones. También muestra para cada número de
+repeticiones estimaciones del intervalo de confianza al 99\%.
+El script para generar esta figura esta
+\href{https://github.com/joacorapela/delfiProbability2026/blob/master/code/scripts/doICD1a.R}{aca}.
+
+Vemos que los intervalos de confianza recién empiezan a cubrir un rango similar
+con números de repeticiones mayores a los 40.000.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=6in]{../../figures/ICD1a.png}
+    \caption{Estimación puntual de la probabilidad del evento B condicionado en el
+    evento A, $P(B|A)$, e intervalo de confianza al 99\%.}
+    \label{fig:1a}
+\end{figure}
+
+\section*{Problema 1b}
+
+La Figura~\ref{fig:1b} grafica las estimaciones de la probabilidad del evento B
+usando distintos números de repeticiones. También muestra para cada número de
+repeticiones el intervalo de sampleo al 99\% de confianza. Cuando estimaciones de la probabilidad
+del evento B se generan con datos sampleados bajo la hipótesis nula, estas
+estimaciones caerán en el intervalo de sampleo al 99\% de confianza con una probabilidad del 99\%.
+El script para generar esta figura esta
+\href{https://github.com/joacorapela/delfiProbability2026/blob/master/code/scripts/doICD1b.R}{aca}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=6in]{../..//figures/ICD1b.png}
+    \caption{Estimación de la probabilidad del evento B e intervalo de sampleo
+    con 99\% de confianza.}
+    \label{fig:1b}
+\end{figure}
+
+Para derivar la expresión del intervalo de sampleo, primero derivamos la
+distribución del estimador de la probabilidad, $p$, del evento B. Con los datos
+del problema:
+
+\begin{align*}
+    p=\frac{30\times 29\times 28\times 27\times 26}{64\times 63\times 62\times 61\times 60}
+\end{align*}
+
+Llamamos al estimator de $p$ con $N$ muestras como $\hat{p}_N$:
+
+\begin{align*}
+    \hat{p}_N=\frac{1}{N}\sum_{i=1}^NX_i
+\end{align*}
+
+\noindent donde las variables $\{X_i\}$ son variables independientes e
+identicamente distribuidas con distribución Bernoulli con media $p$. La
+variable $X_i$ tomará el valor 1 si en el el sampleo $i$ el evento B ocurrió, y
+el valor 0 en caso contrario. Es decir,
+
+\begin{align*}
+    X_i\sim Bernoulli(p)
+\end{align*}
+
+Sabemos que $E\{X_i\}=p$ y $Var\{X_i\}=p(1-p)$. Entonces
+
+\begin{align*}
+    E\left\{\hat{p}_N\right\}&=\frac{1}{N}\sum_{i=1}^NE\{X_i\}=\frac{1}{N}\sum_{i=1}^Np=p\\
+    \text{Var}\left\{\hat{p}_N\right\}&=\frac{1}{N^2}\sum_{i=1}^N\text{Var}\{X_i\}=\frac{1}{N^2}Np(1-p)=\frac{p(1-p)}{N}
+\end{align*}
+
+Ahora, por el Teorema Central del Límite, para N suficientemente grande, se
+cumple que
+
+\begin{align}
+    \hat{p}_N\sim\mathcal{N}\left(\mu=p,\sigma^2=\frac{p(1-p)}{N}\right)\label{eq:estimator}
+\end{align}
+
+Entonces
+
+\begin{align*}
+    Z=\frac{\hat{p}_N-\mu}{\sigma}\sim\mathcal{N}(0, 1)
+\end{align*}
+
+Por lo cual
+
+\begin{align*}
+    P(-z_{\alpha/2}\le Z<z_{\alpha/2})&=1-\alpha\\
+    P(-z_{\alpha/2}\le\frac{\hat{p}_N-\mu}{\sigma}<z_{\alpha/2})&=1-\alpha\\
+    P(\mu-\sigma z_{\alpha/2}\le\hat{p}_N<\mu+\sigma z_{\alpha/2})&=1-\alpha
+\end{align*}
+
+La última ecuación nos dice que, para $N$ suficientemente grande, con una
+probabilidad de $1-\alpha$ nuestro estimador de la probabilidad del evento B
+estará en el intervalo de sampleo $[\mu-\sigma z_{\alpha/2},\mu+\sigma
+z_{\alpha/2}]$, donde $\mu$ y $\sigma$ están dadas en Eq.\ref{eq:estimator}.
+
+\end{document}
