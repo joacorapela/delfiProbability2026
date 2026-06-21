@@ -21,9 +21,9 @@ estimate_PBs <- function(nReps,
     return(pBs)
 }
 
-nReps <- seq(from=1000, to=60000, by=1000) # nRep we will use
+nReps <- seq(from=1000, to=80000, by=1000) # nRep we will use
 # nReps <- seq(from=1000, to=15000, by=5000) # nRep we will use
-confidence <- .95 # for error bars
+confidence <- .99 # for error bars
 
 # set the multiplier of the standard error based on the desired confidence for
 # the confidence intervals
@@ -75,6 +75,8 @@ ggplot(plot_data, aes(x = nReps)) +
             linewidth = 1) +
   geom_point(aes(y = estimated, color = "Estimated Probability"), 
              size = 2.5) +
+  geom_hline(aes(yintercept = p, color = analyticalCIlabel), linetype = "dotted", linewidth = 1) +
+
   
   # Customizing Colors and Legend Names
   scale_color_manual(name = "Series", values = color_values) +
